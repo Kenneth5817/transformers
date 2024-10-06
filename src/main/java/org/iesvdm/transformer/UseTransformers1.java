@@ -14,7 +14,9 @@ public class UseTransformers1
         for(int i=0; i<numbers.length; i++)
             a.add(new Integer(numbers[i]));
         System.out.println("The numbers are stored in an ArrayList: "+a);
+        //Se crea un nuevo transformer de tipo Integer
         Transformer<Integer> trans = new TenTimes();
+        //Y se aplica a todos los elementos del array
         ArrayList<Integer> b=Transformers.applyConst(trans,a);
         System.out.println("Multiplying the contents by 10 gives: "+b);
     }
