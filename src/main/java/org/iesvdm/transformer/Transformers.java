@@ -14,6 +14,7 @@ public class Transformers {
         return b;
     }
 
+    //Estos son los ultimos cambios
     //EJERCICIO 2
     public static <T> void applyDest(Transformer<T> tran, ArrayList<T> a) {
         ArrayList<T> nuevoArray = new ArrayList<>();
