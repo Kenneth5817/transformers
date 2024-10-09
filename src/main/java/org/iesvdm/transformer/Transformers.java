@@ -14,6 +14,20 @@ public class Transformers {
         return b;
     }
 
+    //EJ5
+    // Método transform List que aplica una transformación a cada elemento de la lista
+    public static <T, U> LispList<U> transformList(Transformer<T> transformer, LispList<T> list) {
+
+        U transformedHead = null;
+        if (list.isEmpty()) {
+            ArrayList<T> b = new ArrayList<>();
+        } else {
+            //Aplicar el transformador el primer elemento y continuar con el resto de la lista
+            transformedHead = (U) transformer.transform(list.head());
+        }
+        return (LispList<U>) transformList(transformer, list.tail().cons((T) transformedHead));
+
+    }
     //Estos son los ultimos cambios
     //EJERCICIO 2
     public static <T> void applyDest(Transformer<T> tran, ArrayList<T> a) {
