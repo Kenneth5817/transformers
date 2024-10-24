@@ -1,8 +1,10 @@
 package org.iesvdm.transformer;
-//EJ7
+
 class JoinByAdding implements Joiner<Integer> {
-    public Integer join(Integer int1,Integer int2)
-    {
+
+    //Interfaz que suma 2 objetos, o sea, tiene 2 parámetros Integer
+    //y devuelve la suma
+    public Integer join(Integer int1,Integer int2) {
         return (Integer) (int1+int2);
     }
 }

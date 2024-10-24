@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class UseJoiners1
 {
-    //3 entender funcionamiento
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
