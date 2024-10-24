@@ -20,7 +20,7 @@ public class Transformers {
             if (list.isEmpty()) {
                 return LispList.empty();
             } else {
-                // Aplicar el transformador al primer elemento y continuar con el resto de la lista
+                // Aplica el transformador al primer elemento y continua con el resto de la lista
                 U transformedHead = (U) transformer.transform(list.head());
                 return (LispList<U>) transformList(transformer, list.tail()).cons(transformedHead);
             }

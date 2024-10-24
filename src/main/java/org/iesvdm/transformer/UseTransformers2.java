@@ -19,9 +19,9 @@ public class UseTransformers2
         for(int i=0; i<words.length; i++)
             a.add(words[i]);
         System.out.println("The words are stored in an ArrayList: "+a);
-
+        String greeting="Hello!";
         //Crea otro array aplicando el transformer, (es decir el hello) a cada palabra
-        Transformer<String> hello = new HelloAdder();
+        Transformer<String> hello = new HelloAdder(greeting);
         ArrayList<String> b=Transformers.applyConst(hello,a);
         //Mostramos el resultado por pantalla
         System.out.println("Adding \"hello\" to the words gives: "+b);
