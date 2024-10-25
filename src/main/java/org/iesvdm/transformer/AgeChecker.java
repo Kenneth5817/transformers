@@ -1,5 +1,6 @@
 package org.iesvdm.transformer;
 
+//With this class we could check the age of a person
 public class AgeChecker {
     private String name;
     private int age;
@@ -10,11 +11,12 @@ public class AgeChecker {
         this.age = age;
     }
 
-    // Método para obtener la edad
+    // Getter to get the age of the person
     public int getAge() {
         return age;
     }
 
+    //to String
     @Override
     public String toString() {
         return name;

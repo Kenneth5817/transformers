@@ -1,6 +1,6 @@
 package org.iesvdm.transformer;
 
-//TenTimes implementa un transformer
+//TenTimes implements un transformer
 public class TenTimes implements Transformer<Integer>
 {
 

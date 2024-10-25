@@ -1,15 +1,7 @@
 package org.iesvdm;
-
 import org.iesvdm.transformer.*;
 import org.iesvdm.transformer.BookChecker;
 
-import java.util.ArrayList;
-import java.util.StringJoiner;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-
-import org.iesvdm.transformer.*;
 import java.util.ArrayList;
 import java.util.StringJoiner;
 
@@ -21,19 +13,23 @@ public class Main {
             System.out.println("i = " + i);
         }
 
-        // Ejemplo con AgeChecker
+        //EXERCISE 7
+        // Here, we are going to add some persons ;)
         ArrayList<Person> people = new ArrayList<>();
-        people.add(new Person("Alice", 25));
-        people.add(new Person("Bob", 17));
-        people.add(new Person("Charlie", 30));
-        people.add(new Person("Diana", 15));
+        people.add(new Person("Lucas", 35));
+        people.add(new Person("Raquel", 16));
+        people.add(new Person("Kenneth", 19));
+        people.add(new Person("Pepe", 13));
 
         AgeChecker ageChecker = new AgeChecker("Alice",18);
-        //ComprobadorUtil.removeFailingChecks(people, ageChecker); Con esta linea borraríamos y despues comprobariaos el resultado
-        System.out.println("Personas mayores de 18 años: " + people); // Debería imprimir [Alice, Charlie]
-     // Debería imprimir [Alice, Charlie]
+        //ComprobadorUtil.removeFailingChecks(people, ageChecker);
+        //With this line we will remove the persons under 18 but I have a problem and if I quit, there
+        //are some mistakes and I don't know how to solved it. So in this ckeck the results will print
+        //all the persons without the check
+        System.out.println("Personas mayores de 18 años: " + people);
+        // This system will print Kenneth and Lucas
 
-        // Ejemplo con PageChecker
+        // Here, we are going to adds some books
         ArrayList<Book> books = new ArrayList<>();
         books.add(new Book("The Great Gatsby", 180));
         books.add(new Book("1984", 328));
@@ -42,27 +38,33 @@ public class Main {
 
         PageChecker pageChecker = new PageChecker(200);
         ComprobadorUtil.removeUnmatched(books, pageChecker);
-        System.out.println("Libros con más de 200 páginas: " + books); // Debería imprimir [1984, War and Peace]
+        //This will need to print the book 1984  ;)
+        System.out.println("Libros con más de 200 páginas: " + books);
 
-        /**Ej 8**/
+        //EXERCISE 8//
+
+        //We will have 2 lists
         ArrayList<String> list1 = new ArrayList<>();
         list1.add("Hello");
         list1.add("Goodbye");
 
         ArrayList<String> list2 = new ArrayList<>();
+        //We are adding some words
         list2.add("world");
         list2.add("everyone");
 
-        // Crear un StringJoiner con un espacio como delimitador
+        // We create a stringJoiner delimiter by " "
         StringJoiner stringJoiner = new StringJoiner(" ");
 
-        // Unir las dos listas (aquí necesitas un Joiner<String> que funcione)
-        StringJoinerImpl stringJoinerImpl = new StringJoinerImpl(" "); // Asegúrate de que existe esta clase
+        // Now we are going to put together both lists.
+        StringJoinerImpl stringJoinerImpl = new StringJoinerImpl(" ");
+        //We will join with zip both lists
         ArrayList<String> joinedList = Joiners.zipArrayLists(stringJoinerImpl, list1, list2);
 
-        // Imprimir el resultado
+        // With this for, all the results will be printed ;)
         for (String item : joinedList) {
-            System.out.println(item); // Debería imprimir "Hello world" y "Goodbye everyone"
+            //This will print hello world and goodbye everyone
+            System.out.println(item);
         }
     }
 }

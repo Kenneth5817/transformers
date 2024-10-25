@@ -1,5 +1,6 @@
 package org.iesvdm.transformer;
 
+//Method to check the book
 public class BookChecker implements Comprobador<Book> {
     public BookChecker(int i) {
     }

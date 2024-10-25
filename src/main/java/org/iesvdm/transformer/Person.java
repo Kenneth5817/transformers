@@ -1,6 +1,8 @@
 package org.iesvdm.transformer;
 
+//Class person
 public class Person {
+    //Will have a name and an age
     private String name;
     private int age;
 
@@ -9,6 +11,7 @@ public class Person {
         this.age = age;
     }
 
+    //getters and setters
     public int getAge() {
         return age;
     }
@@ -17,6 +20,7 @@ public class Person {
         return name;
     }
 
+    //toString
     @Override
     public String toString() {
         return name + " (" + age + ")";

@@ -1,6 +1,6 @@
 package org.iesvdm.transformer;
 
-
+//EXERCISE 8
 import java.util.ArrayList;
 
 public class Joiners{
@@ -26,14 +26,14 @@ public class Joiners{
 
 
     //Ejercicio 4
-    //Método zipArrayLists que une dos ArrayLists usando un Joiner
+    //Method zipArrayLists will join two ArrayLists using un Joiner
     public static <T> ArrayList<T> zipArrayLists(Joiner<T> joiner, ArrayList<T> list1, ArrayList<T> list2){
         ArrayList<T> result = new ArrayList<>();
 
-        //Vemos la longitud minima entre las listas
+        //We can see the length of both lists and we take the min of them ;)
         int size= Math.min(list1.size(),list2.size());
 
-        //Recorremos los elemntos y aplicamos el método Join de Joiner
+        //We will go one by one using the joiner to join both lists
         for(int i=0; i<size; i++){
             T joinedElement = joiner.join(list1.get(i),list2.get(i));
             result.add(joinedElement);

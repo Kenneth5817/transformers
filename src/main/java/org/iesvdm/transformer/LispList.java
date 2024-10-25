@@ -1,5 +1,7 @@
 package org.iesvdm.transformer;
 
+//Class LipList
+//EXERCISE 3-> ONLY UNDERSTAND
 public class LispList<E>
 {
     private Cell<E> myList;

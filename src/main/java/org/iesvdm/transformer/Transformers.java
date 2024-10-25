@@ -4,45 +4,49 @@ import java.util.ArrayList;
 
 public class Transformers {
 
-    //Creamos un array
+    //EXERCISE 1-> UNderstand this class
+    //Method to applyconst
     public static <T> ArrayList<T> applyConst(Transformer<T> tran, ArrayList<T> a) {
-        //Crea un array en t y se aplica en el nuevo la transformación sobre el antiguo
+        //We create and arrayList in t ;)
         ArrayList<T> b = new ArrayList<>();
         for (T t : a)
-            //Devuelve otro array transformado del mismo tipo
+            //We return another array of the same type
             b.add(tran.transform(t));
         return b;
     }
 
     //EJ5
-    // Método transform List que aplica una transformación a cada elemento de la lista
+    // METHOD transform List will transform every element of the list
     public static <T, U> LispList<U> transformList(Transformer<T> transformer, LispList<T> list) {
 
         U transformedHead = null;
         if (list.isEmpty()) {
+            //if the list is empty will create and array
             ArrayList<T> b = new ArrayList<>();
         } else {
-            //Aplicar el transformador el primer elemento y continuar con el resto de la lista
+            //the first alement ill be applied by the transformer
             transformedHead = (U) transformer.transform(list.head());
         }
         return (LispList<U>) transformList(transformer, list.tail().cons((T) transformedHead));
 
     }
-    //Estos son los ultimos cambios
-    //EJERCICIO 2
-    public static <T> void applyDest(Transformer<T> tran, ArrayList<T> a) {
-        ArrayList<T> nuevoArray = new ArrayList<>();
 
-        //2 maneras de hacerlo
+    //EXERCISE 2  (MADE IN CLASS)
+    public static <T> void applyDest(Transformer<T> tran, ArrayList<T> a) {
+        ArrayList<T> newArray = new ArrayList<>();
+
+        //2 ways of doing that
         for(int i = 0; i< a.size(); i++){
             a.set(i, tran.transform(a.get(i)));
         }
 
-        //Va a ir recorriendo indice por indice
+        //Will go index by index
         for(T t: a){
             int indice=a.indexOf(t);
+            //if they are the same, we will remove the index
             a.remove(indice);
-            a.add(indice,nuevoArray.get(indice));
+            a.add(indice,newArray.get(indice));
+            //and finally we will transform to t
             tran.transform(t);
         }
     }
